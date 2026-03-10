@@ -98,7 +98,15 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-radial-gradient bg-grid overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-background/75" />
+        <div className="absolute inset-0 bg-radial-gradient" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         <div className="relative max-w-5xl mx-auto px-6 text-center pt-24 pb-32">
           <FadeIn>
