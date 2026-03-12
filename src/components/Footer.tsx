@@ -36,12 +36,11 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="col-span-2 md:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-4">
-                            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                                <span className="text-white font-bold text-xs">S</span>
-                            </div>
-                            <span className="text-base font-bold">
-                                SECU<span className="text-primary">iDEA</span>
-                            </span>
+                            <img
+                                src="https://secuidea.atyhubweb.net/1600752993891/image/resize_24bb0a83a2a9431aa5cc6e8edecd262f.png"
+                                alt="SECUiDEA Logo"
+                                className="h-7 w-auto object-contain"
+                            />
                         </Link>
                         <p className="text-sm text-muted leading-relaxed mb-4">
                             미래형 출입통제시스템<br />
