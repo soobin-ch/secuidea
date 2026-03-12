@@ -48,21 +48,20 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-border' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass border-b border-border' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <img 
-            src="https://secuidea.atyhubweb.net/1600752993891/image/resize_24bb0a83a2a9431aa5cc6e8edecd262f.png" 
-            alt="SECUiDEA Logo" 
-            className="h-8 w-auto object-contain"
-          />
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <span className="text-white font-bold text-sm">S</span>
+          </div>
+          <span className="text-lg font-bold tracking-tight">
+            SECU<span className="text-primary">iDEA</span>
+          </span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navigation.map((item) => (
             <div
