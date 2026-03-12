@@ -26,19 +26,14 @@ export default function ContactPage() {
                         <FadeIn>
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="font-semibold mb-3">📞 영업문의</h3>
-                                <a href="tel:031-8039-5846" className="text-primary hover:underline text-sm">031-8039-5846</a>
+                                <a href="tel:070-4007-1619" className="text-primary hover:underline text-sm">070-4007-1619</a>
                             </div>
                         </FadeIn>
-                        <FadeIn delay={0.1}>
-                            <div className="p-6 rounded-2xl border border-border bg-card">
-                                <h3 className="font-semibold mb-3">🔧 기술문의</h3>
-                                <a href="tel:031-8039-5847" className="text-primary hover:underline text-sm">031-8039-5847</a>
-                            </div>
-                        </FadeIn>
+
                         <FadeIn delay={0.2}>
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="font-semibold mb-3">📍 위치</h3>
-                                <p className="text-sm text-muted leading-relaxed">경기도 성남시 중원구<br />사기막골로 124, 1301호</p>
+                                <p className="text-sm text-muted leading-relaxed">서울특별시 영등포구 문래북로8,<br />에이스엔에스타워 802호</p>
                             </div>
                         </FadeIn>
                     </div>

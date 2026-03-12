@@ -253,10 +253,10 @@ export default function HomePage() {
                 무료 상담 신청
               </Link>
               <Link
-                href="tel:031-8039-5846"
+                href="tel:070-4007-1619"
                 className="px-8 py-3.5 border border-border hover:border-border-light font-medium rounded-xl transition-all hover:bg-card"
               >
-                📞 031-8039-5846
+                📞 070-4007-1619
               </Link>
             </div>
           </FadeIn>

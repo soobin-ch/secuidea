@@ -3,7 +3,7 @@ import { FadeIn } from '@/components/Animations';
 
 export const metadata: Metadata = {
     title: '오시는 길 | (주)시큐이데아',
-    description: '(주)시큐이데아 본사 위치 안내 - 경기도 성남시 중원구 사기막골로 124, 1301호',
+    description: '(주)시큐이데아 본사 위치 안내 - 서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호',
 };
 
 export default function LocationPage() {
@@ -41,16 +41,16 @@ export default function LocationPage() {
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="text-lg font-semibold mb-4">📍 주소</h3>
                                 <p className="text-muted text-sm leading-relaxed">
-                                    경기도 성남시 중원구 사기막골로 124<br />
-                                    SKn테크노파크 비즈센터, 1301호
+                                    서울특별시 영등포구 문래북로8<br />
+                                    에이스엔에스타워, 802호
                                 </p>
                             </div>
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="text-lg font-semibold mb-4">📞 연락처</h3>
                                 <div className="space-y-2 text-sm text-muted">
-                                    <p>영업문의: <a href="tel:031-8039-5846" className="text-primary hover:underline">031-8039-5846</a></p>
-                                    <p>기술문의: <a href="tel:031-8039-5847" className="text-primary hover:underline">031-8039-5847</a></p>
-                                    <p>FAX: 031-624-5848</p>
+                                    <p>영업문의: <a href="tel:070-4007-1619" className="text-primary hover:underline">070-4007-1619</a></p>
+                                    <p>기술문의: <a href="tel:02-6267-1622" className="text-primary hover:underline">02-6267-1622</a></p>
+                                    <p>FAX: 02-6267-1625</p>
                                 </div>
                             </div>
                         </div>

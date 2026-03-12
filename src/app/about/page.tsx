@@ -34,7 +34,12 @@ export default function AboutPage() {
                             <h2 className="text-2xl font-bold mb-6">대표이사 인사말</h2>
                             <div className="space-y-4 text-muted leading-relaxed">
                                 <p>
-                                    안녕하십니까, (주)시큐이데아 대표이사 김희일입니다.
+                                    안녕하십니까, (주)시큐이데아 대표이사 유동삼, 신승철입니다.
+                                </p>
+                                <h3 className="text-lg font-semibold mb-4">📍 주소</h3>
+                                <p className="text-muted text-sm leading-relaxed">
+                                    서울특별시 영등포구 문래북로8<br />
+                                    에이스엔에스타워, 802호
                                 </p>
                                 <p>
                                     저희 시큐이데아는 &ldquo;Security Application Innovation Leader&rdquo;라는 비전 아래,
@@ -52,8 +57,22 @@ export default function AboutPage() {
                                     더 안전하고 스마트한 세상을 만들어 가겠습니다.
                                 </p>
                                 <p className="text-foreground font-medium pt-4">
-                                    (주)시큐이데아 대표이사 김희일
+                                    (주)시큐이데아 대표이사 유동삼, 신승철
                                 </p>
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                <Link
+                                    href="/support/contact"
+                                    className="px-8 py-3.5 bg-primary hover:bg-primary-dark text-white font-medium rounded-xl transition-all shadow-lg shadow-primary/20"
+                                >
+                                    무료 상담 신청
+                                </Link>
+                                <Link
+                                    href="tel:070-4007-1619"
+                                    className="px-8 py-3.5 border border-border hover:border-border-light font-medium rounded-xl transition-all hover:bg-card"
+                                >
+                                    📞 070-4007-1619
+                                </Link>
                             </div>
                         </div>
                     </FadeIn>
@@ -96,7 +115,7 @@ export default function AboutPage() {
                     <FadeIn delay={0.1}>
                         <Link href="/about/location" className="group block p-6 rounded-2xl border border-border bg-card hover:bg-card-hover transition-colors">
                             <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">오시는 길 →</h3>
-                            <p className="text-sm text-muted">경기도 성남시 중원구 사기막골로 124, 1301호</p>
+                            <p className="text-sm text-muted">서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호</p>
                         </Link>
                     </FadeIn>
                 </div>
