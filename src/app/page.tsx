@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FadeIn, ScaleIn } from '@/components/Animations';
+import LogoSlider from '@/components/LogoSlider';
 
 const solutions = [
   {
@@ -220,19 +221,21 @@ export default function HomePage() {
       </section>
 
       {/* Trusted By */}
-      <section className="py-16 px-6 border-t border-border">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 border-t border-border overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
           <FadeIn>
-            <p className="text-center text-sm text-muted mb-8">국내 주요 기관·기업이 신뢰하는 파트너</p>
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              {clients.map((client) => (
-                <span key={client} className="text-sm md:text-base text-muted/60 font-medium hover:text-muted transition-colors">
-                  {client}
-                </span>
-              ))}
+            <div className="text-center">
+              <p className="text-sm font-medium text-primary mb-3 tracking-wider uppercase">Partners</p>
+              <h2 className="text-3xl font-bold mb-4">국내 주요 기관·기업이 신뢰하는 파트너</h2>
+              <p className="text-muted max-w-xl mx-auto text-sm">
+                시큐이데아는 검증된 기술력으로 다양한 분야의 파트너들과 함께하고 있습니다.
+              </p>
             </div>
           </FadeIn>
         </div>
+        <FadeIn delay={0.2}>
+          <LogoSlider />
+        </FadeIn>
       </section>
 
       {/* CTA */}
