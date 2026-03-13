@@ -1,0 +1,208 @@
+{
+  "settings": {
+    "siteName": "(주)시큐이데아",
+    "ceo": "유동삼, 신승철",
+    "address": "서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호",
+    "phone": "070-4007-1619",
+    "fax": "02-6267-1625",
+    "techPhone": "02-6267-1622",
+    "businessNumber": "122-86-22929",
+    "email": "contact@secuidea.co.kr"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "메인 페이지",
+      "path": "/",
+      "lastMod": "2026-03-13",
+      "status": "published",
+      "content": {
+        "hero": {
+          "badge": "Security Application Innovation Leader",
+          "title": "보안 솔루션의\n새로운 기준을 만듭니다",
+          "description": "AI 기반 스마트 출입관리로 안전한 환경을 설계합니다.",
+          "ctaPrimary": "솔루션 살펴보기",
+          "ctaSecondary": "도입 문의하기"
+        },
+        "solutions": [
+          {
+            "id": "visitone",
+            "title": "VisitOne",
+            "subtitle": "내방객 방문관리 솔루션",
+            "description": "QR코드 인증과 관리자 승인 기반의 간편하고 안전한 내방객 출입관리 시스템",
+            "href": "/solutions/visitone",
+            "icon": "🏢",
+            "color": "from-blue-500/20 to-blue-600/5",
+            "span": "md:col-span-2"
+          },
+          {
+            "id": "schoolguard-pro",
+            "title": "SchoolGuardPro",
+            "subtitle": "학교 전자출입관리",
+            "description": "학교를 출입하는 외부인의 신원확인, 방문 목적 등록, 출입 통제를 통합 지원",
+            "href": "/solutions/schoolguard-pro",
+            "icon": "🏫",
+            "color": "from-emerald-500/20 to-emerald-600/5",
+            "span": "md:col-span-1"
+          },
+          {
+            "id": "careguard-pro",
+            "title": "CareGuardPro",
+            "subtitle": "요양병원 AI 방문관리",
+            "description": "요양병원에 최적화된 AI 방문관리 키오스크 솔루션",
+            "href": "/solutions/careguard-pro",
+            "icon": "🏥",
+            "color": "from-purple-500/20 to-purple-600/5",
+            "span": "md:col-span-1"
+          }
+        ],
+        "features": [
+          {
+            "title": "보안성",
+            "description": "에스원 연동 및 다양한 출입통제 장비와의 호환"
+          },
+          {
+            "title": "간편한 도입",
+            "description": "사전방문신청부터 출입기록까지 간편한 3단계"
+          },
+          {
+            "title": "커스터마이징",
+            "description": "보안환경에 맞춰 선택적으로 연동되는 고급 기능"
+          },
+          {
+            "title": "전문 상담",
+            "description": "15년 이상의 출입통제 시스템 전문 경험"
+          }
+        ]
+      }
+    },
+    {
+      "id": "about",
+      "name": "회사 소개",
+      "path": "/about",
+      "lastMod": "2026-03-13",
+      "status": "published",
+      "content": {
+        "hero": {
+          "badge": "About Us",
+          "title": "보안의 가치를 혁신하는\n기술 파트너",
+          "description": "(주)시큐이데아는 2010년 설립 이래, 출입통제 및 방문관리 시스템 분야에서 끊임없는 기술 혁신을 이끌어 왔습니다."
+        },
+        "ceoMessage": {
+          "title": "대표이사 인사말",
+          "content": "안녕하십니까, (주)시큐이데아 대표이사 유동삼, 신승철입니다.\n\n저희 시큐이데아는 \"Security Application Innovation Leader\"라는 비전 아래, 보안 솔루션의 새로운 패러다임을 열어가고 있습니다..."
+        },
+        "stats": [
+          {
+            "id": "1",
+            "label": "설립연도",
+            "value": "2010"
+          },
+          {
+            "id": "2",
+            "label": "보안 솔루션 경험 (년)",
+            "value": "15+"
+          },
+          {
+            "id": "3",
+            "label": "구축 프로젝트",
+            "value": "200+"
+          }
+        ]
+      }
+    },
+    {
+      "id": "solutions",
+      "name": "솔루션 목록",
+      "path": "/solutions",
+      "lastMod": "2026-03-13",
+      "status": "published",
+      "content": {
+        "header": {
+          "title": "모든 환경에 최적화된\n출입통제 솔루션",
+          "description": "학교, 병원, 기업, 군부대 등 각 현장의 보안 요구를 정확히 충족하는 맞춤형 솔루션"
+        }
+      }
+    },
+    {
+      "id": "visitone",
+      "name": "VisitOne",
+      "path": "/solutions/visitone",
+      "lastMod": "2026-03-13",
+      "status": "published",
+      "content": {
+        "hero": {
+          "badge": "🏢 내방객 방문관리",
+          "title": "VisitOne",
+          "description": "QR코드 인증과 관리자 승인 기반의 간편하고 안전한\n내방객 출입관리 시스템"
+        },
+        "steps": [
+          {
+            "id": "1",
+            "title": "방문 신청",
+            "description": "내방객이 모바일이나 PC로 사전에 방문 신청을 진행합니다."
+          },
+          {
+            "id": "2",
+            "title": "관리자 승인",
+            "description": "담당자가 신청 내역을 확인하고 출입을 승인합니다."
+          },
+          {
+            "id": "3",
+            "title": "출입/퇴실",
+            "description": "승인된 QR코드로 출입하고, 방문 완료 후 퇴실 처리됩니다."
+          }
+        ],
+        "features": [
+          {
+            "title": "QR코드 인증",
+            "description": "종이 기반의 수기 명부를 대신하여 위변조가 불가능한 디지털 인증을 사용합니다."
+          },
+          {
+            "title": "출입 이력 보관",
+            "description": "방문자의 출입 일시, 방문 장소, 개인정보를 안전하게 기록하고 보관합니다."
+          },
+          {
+            "title": "실시간 모니터링",
+            "description": "현재 건물 내에 체류 중인 내방객 현황을 실시간으로 확인 가능합니다."
+          },
+          {
+            "title": "사전 예약 시스템",
+            "description": "기다림 없는 빠른 입장을 위한 웹 기반 사전 예약 기능을 제공합니다."
+          },
+          {
+            "title": "단말기 연동",
+            "description": "스피드 게이트, 출입 통제 단말기 등 기존 보안 장비와 쉽게 연동됩니다."
+          },
+          {
+            "title": "데이터 분석",
+            "description": "기간별 방문 통계 데이터를 통해 보안 및 운영 전략을 수립할 수 있습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "schoolguard-pro",
+      "name": "SchoolGuardPro",
+      "path": "/solutions/schoolguard-pro",
+      "lastMod": "2026-03-13",
+      "status": "published",
+      "content": {
+        "hero": {
+          "badge": "🏫 학교 전자출입관리",
+          "title": "SchoolGuardPro",
+          "description": "학교를 출입하는 외부인의 신원확인, 방문 목적 등록,\n출입 통제를 통합 지원하는 전자출입관리 시스템"
+        }
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "최고 관리자",
+      "email": "admin@secuidea.co.kr",
+      "role": "Super Admin",
+      "status": "active"
+    }
+  ]
+}

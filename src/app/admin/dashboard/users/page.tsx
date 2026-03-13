@@ -1,12 +1,40 @@
 'use client';
 
-const users = [
-    { id: 1, name: '최고관리자', email: 'admin@secuidea.co.kr', role: 'Super Admin', date: '2024-01-01', status: 'Active' },
-    { id: 2, name: '기술팀장', email: 'tech@secuidea.co.kr', role: 'Editor', date: '2024-02-15', status: 'Active' },
-    { id: 3, name: '영업담당', email: 'sales@secuidea.co.kr', role: 'Editor', date: '2024-03-01', status: 'Inactive' },
-];
+import { useState, useEffect } from 'react';
+
+interface User {
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+    status: string;
+}
 
 export default function UserManagementPage() {
+    const [users, setUsers] = useState<User[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('/api/admin/users')
+            .then(res => res.json())
+            .then(data => {
+                setUsers(data);
+                setIsLoading(false);
+            })
+            .catch(err => {
+                console.error('Failed to fetch users:', err);
+                setIsLoading(false);
+            });
+    }, []);
+
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center min-h-[400px]">
+                <div className="w-8 h-8 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+            </div>
+        );
+    }
+
     return (
         <div className="space-y-8">
             <div className="flex items-end justify-between">
@@ -25,7 +53,6 @@ export default function UserManagementPage() {
                         <tr>
                             <th className="px-8 py-4">사용자</th>
                             <th className="px-8 py-4">권한</th>
-                            <th className="px-8 py-4">등록일</th>
                             <th className="px-8 py-4">상태</th>
                             <th className="px-8 py-4 text-right">작업</th>
                         </tr>
@@ -43,9 +70,8 @@ export default function UserManagementPage() {
                                     </div>
                                 </td>
                                 <td className="px-8 py-5 text-sm font-medium">{user.role}</td>
-                                <td className="px-8 py-5 text-sm text-muted-foreground">{user.date}</td>
                                 <td className="px-8 py-5">
-                                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${user.status === 'Active' ? 'bg-emerald-500/20 text-emerald-500' : 'bg-red-500/20 text-red-500'
+                                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${user.status === 'active' ? 'bg-emerald-500/20 text-emerald-500' : 'bg-red-500/20 text-red-500'
                                         }`}>
                                         {user.status}
                                     </span>

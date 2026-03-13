@@ -1,123 +1,74 @@
 import { Metadata } from 'next';
 import { FadeIn } from '@/components/Animations';
-import Link from 'next/link';
+import { getCMSData } from '@/lib/cms';
 
 export const metadata: Metadata = {
     title: '회사소개 | (주)시큐이데아',
-    description: '출입통제시스템 솔루션 구축 전문기업 (주)시큐이데아를 소개합니다.',
+    description: '(주)시큐이데아는 보안 솔루션의 새로운 패러다임을 열어갑니다.',
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const data = await getCMSData();
+    const page = data.pages.find((p: any) => p.id === 'about');
+    const content = page?.content || {};
+
+    const hero = content.hero || {
+        badge: 'About Us',
+        title: '보안의 가치를 혁신하는\n기술 파트너',
+        description: '(주)시큐이데아는 2010년 설립 이래, 출입통제 및 방문관리 시스템 분야에서 끊임없는 기술 혁신을 이끌어 왔습니다.'
+    };
+
+    const ceoMessage = content.ceoMessage || {
+        title: '대표이사 인사말',
+        content: '안녕하십니까, (주)시큐이데아 대표이사 유동삼, 신승철입니다...'
+    };
+
+    const stats = content.stats || [];
+
     return (
         <div className="pt-24 pb-20">
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="py-20 px-6 bg-radial-gradient">
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
-                        <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">About Us</p>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                            보안의 가치를 혁신하는<br /><span className="text-gradient">기술 파트너</span>
+                        <p className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">{hero.badge}</p>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 whitespace-pre-line">
+                            {hero.title}
                         </h1>
-                        <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-                            (주)시큐이데아는 2010년 설립 이래, 출입통제 및 방문관리 시스템 분야에서
-                            끊임없는 기술 혁신을 이끌어 왔습니다.
+                        <p className="text-lg text-muted max-w-2xl mx-auto">
+                            {hero.description}
                         </p>
                     </FadeIn>
                 </div>
             </section>
 
             {/* CEO Message */}
-            <section className="py-20 px-6">
+            <section className="py-24 px-6">
                 <div className="max-w-4xl mx-auto">
                     <FadeIn>
-                        <div className="p-8 md:p-12 rounded-2xl border border-border bg-card">
-                            <h2 className="text-2xl font-bold mb-6">대표이사 인사말</h2>
-                            <div className="space-y-4 text-muted leading-relaxed">
-                                <p>
-                                    안녕하십니까, (주)시큐이데아 대표이사 유동삼, 신승철입니다.
-                                </p>
-                                <h3 className="text-lg font-semibold mb-4">📍 주소</h3>
-                                <p className="text-muted text-sm leading-relaxed">
-                                    서울특별시 영등포구 문래북로8<br />
-                                    에이스엔에스타워, 802호
-                                </p>
-                                <p>
-                                    저희 시큐이데아는 &ldquo;Security Application Innovation Leader&rdquo;라는 비전 아래,
-                                    보안 솔루션의 새로운 패러다임을 열어가고 있습니다. 단순한 출입통제를 넘어
-                                    AI 기반의 스마트 방문관리, QR코드 인증 시스템, 그리고 다양한 기관과의
-                                    시스템 연동을 통해 차세대 보안 환경을 구축하고 있습니다.
-                                </p>
-                                <p>
-                                    학교, 병원, 기업, 군부대 등 각 현장의 특수한 요구사항을 세심하게 반영하여
-                                    최적화된 솔루션을 제공하며, 에스원과의 전략적 파트너십을 통해 국내 최고 수준의
-                                    보안 서비스를 실현하고 있습니다.
-                                </p>
-                                <p>
-                                    앞으로도 고객의 안전과 편의를 최우선으로 생각하며, 기술 혁신을 통해
-                                    더 안전하고 스마트한 세상을 만들어 가겠습니다.
-                                </p>
-                                <p className="text-foreground font-medium pt-4">
-                                    (주)시큐이데아 대표이사 유동삼, 신승철
-                                </p>
+                        <div className="p-10 md:p-16 rounded-[3rem] bg-card border border-border relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full -mr-32 -mt-32" />
+                            <h2 className="text-3xl font-bold mb-10">{ceoMessage.title}</h2>
+                            <div className="space-y-6 text-muted leading-relaxed whitespace-pre-line">
+                                {ceoMessage.content}
                             </div>
-                            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                <Link
-                                    href="/support/contact"
-                                    className="px-8 py-3.5 bg-primary hover:bg-primary-dark text-white font-medium rounded-xl transition-all shadow-lg shadow-primary/20"
-                                >
-                                    무료 상담 신청
-                                </Link>
-                                <Link
-                                    href="tel:070-4007-1619"
-                                    className="px-8 py-3.5 border border-border hover:border-border-light font-medium rounded-xl transition-all hover:bg-card"
-                                >
-                                    📞 070-4007-1619
-                                </Link>
+                            <div className="mt-12 pt-8 border-t border-border">
+                                <p className="font-bold text-foreground text-lg">(주)시큐이데아 대표이사 유동삼, 신승철</p>
                             </div>
                         </div>
                     </FadeIn>
                 </div>
             </section>
 
-            {/* Company Info Cards */}
-            <section className="py-16 px-6 border-t border-border">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <FadeIn delay={0}>
-                        <div className="p-6 rounded-2xl border border-border bg-card text-center">
-                            <div className="text-4xl font-bold text-gradient mb-2">2010</div>
-                            <p className="text-muted text-sm">설립연도</p>
-                        </div>
-                    </FadeIn>
-                    <FadeIn delay={0.1}>
-                        <div className="p-6 rounded-2xl border border-border bg-card text-center">
-                            <div className="text-4xl font-bold text-gradient mb-2">15+</div>
-                            <p className="text-muted text-sm">보안 솔루션 경험 (년)</p>
-                        </div>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <div className="p-6 rounded-2xl border border-border bg-card text-center">
-                            <div className="text-4xl font-bold text-gradient mb-2">200+</div>
-                            <p className="text-muted text-sm">구축 프로젝트</p>
-                        </div>
-                    </FadeIn>
-                </div>
-            </section>
-
-            {/* Sub pages links */}
-            <section className="py-16 px-6 border-t border-border">
-                <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <FadeIn>
-                        <Link href="/about/history" className="group block p-6 rounded-2xl border border-border bg-card hover:bg-card-hover transition-colors">
-                            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">걸어온 길 →</h3>
-                            <p className="text-sm text-muted">2010년부터 현재까지 시큐이데아의 성장 발자취</p>
-                        </Link>
-                    </FadeIn>
-                    <FadeIn delay={0.1}>
-                        <Link href="/about/location" className="group block p-6 rounded-2xl border border-border bg-card hover:bg-card-hover transition-colors">
-                            <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">오시는 길 →</h3>
-                            <p className="text-sm text-muted">서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호</p>
-                        </Link>
-                    </FadeIn>
+            {/* Stats */}
+            <section className="py-20 px-6 border-y border-border bg-card/30">
+                <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    {stats.map((stat: any) => (
+                        <FadeIn key={stat.id}>
+                            <p className="text-sm font-medium text-muted mb-2 uppercase tracking-widest">{stat.label}</p>
+                            <h3 className="text-5xl font-bold text-primary">{stat.value}</h3>
+                        </FadeIn>
+                    ))}
                 </div>
             </section>
         </div>

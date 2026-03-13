@@ -17,15 +17,25 @@ export default function AdminLoginPage() {
         setIsLoading(true);
         setError('');
 
-        // Mock Login Logic
-        setTimeout(() => {
-            if (id === 'admin' && password === 'admin123') {
+        try {
+            const res = await fetch('/api/admin/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id, password }),
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
                 router.push('/admin/dashboard');
             } else {
-                setError('아이디 또는 비밀번호가 일치하지 않습니다.');
+                setError(data.error || '로그인에 실패했습니다.');
                 setIsLoading(false);
             }
-        }, 1000);
+        } catch (error) {
+            setError('서버와의 통신에 실패했습니다.');
+            setIsLoading(false);
+        }
     };
 
     return (

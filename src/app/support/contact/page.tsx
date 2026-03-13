@@ -1,12 +1,19 @@
 import { Metadata } from 'next';
 import { FadeIn } from '@/components/Animations';
+import { getCMSData } from '@/lib/cms';
 
 export const metadata: Metadata = {
     title: '문의하기 | (주)시큐이데아',
     description: '시큐이데아 솔루션 도입 및 기술 문의를 남겨주세요.',
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+    const data = await getCMSData();
+    const settings = data.settings || {
+        phone: '070-4007-1619',
+        address: '서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호'
+    };
+
     return (
         <div className="pt-24 pb-20">
             <section className="py-20 px-6 bg-radial-gradient">
@@ -26,14 +33,14 @@ export default function ContactPage() {
                         <FadeIn>
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="font-semibold mb-3">📞 영업문의</h3>
-                                <a href="tel:070-4007-1619" className="text-primary hover:underline text-sm">070-4007-1619</a>
+                                <a href={`tel:${settings.phone}`} className="text-primary hover:underline text-sm">{settings.phone}</a>
                             </div>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
                             <div className="p-6 rounded-2xl border border-border bg-card">
                                 <h3 className="font-semibold mb-3">📍 위치</h3>
-                                <p className="text-sm text-muted leading-relaxed">서울특별시 영등포구 문래북로8,<br />에이스엔에스타워 802호</p>
+                                <p className="text-sm text-muted leading-relaxed whitespace-pre-line">{settings.address}</p>
                             </div>
                         </FadeIn>
                     </div>

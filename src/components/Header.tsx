@@ -35,10 +35,15 @@ const navigation = [
   },
 ];
 
-export default function Header() {
+export default function Header({ settings }: { settings?: any }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const siteName = settings?.siteName || 'SECUiDEA';
+  const siteNameParts = siteName.includes('(주)')
+    ? [siteName.split('(주)')[1], ' (주)']
+    : [siteName, ''];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -54,11 +59,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <span className="text-white font-bold text-sm">S</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm">
+            S
           </div>
           <span className="text-lg font-bold tracking-tight">
-            SECU<span className="text-primary">iDEA</span>
+            {siteName === '(주)시큐이데아' ? (
+              <>SECU<span className="text-primary">iDEA</span></>
+            ) : siteName}
           </span>
         </Link>
 

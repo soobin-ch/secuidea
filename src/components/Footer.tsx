@@ -1,6 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 
-export default function Footer() {
+export default function Footer({ settings: propSettings }: { settings?: any }) {
+    const defaultSettings = {
+        siteName: "(주)시큐이데아",
+        ceo: "유동삼, 신승철",
+        address: "서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호",
+        phone: "070-4007-1619",
+        fax: "02-6267-1625",
+        techPhone: "02-6267-1622",
+        businessNumber: "122-86-22929"
+    };
+
+    const settings = propSettings || defaultSettings;
+
     return (
         <footer className="border-t border-border bg-background py-16">
             <div className="max-w-7xl mx-auto px-6">
@@ -11,7 +25,7 @@ export default function Footer() {
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                                 <span className="text-white font-bold text-sm">S</span>
                             </div>
-                            <span className="text-2xl font-extrabold tracking-tight text-foreground">(주)시큐이데아</span>
+                            <span className="text-2xl font-extrabold tracking-tight text-foreground">{settings.siteName}</span>
                         </Link>
                     </div>
 
@@ -26,9 +40,9 @@ export default function Footer() {
                         </div>
 
                         <div className="space-y-2 text-[13px] text-muted-foreground leading-relaxed">
-                            <p>주식회사 시큐이데아 | 대표이사 유동삼, 신승철 | 사업자등록번호 122-86-22929</p>
-                            <p>서울특별시 영등포구 문래북로8, 에이스엔에스타워 802호 | 대표전화 : 070-4007-1619 | 팩스 : 02-6267-1625</p>
-                            <p className="pt-2 font-medium">Copyright ⓒ 시큐이데아. ALL RIGHTS RESERVED.</p>
+                            <p>{settings.siteName} | 대표이사 {settings.ceo} | 사업자등록번호 {settings.businessNumber}</p>
+                            <p>{settings.address} | 대표전화 : {settings.phone} | 팩스 : {settings.fax}</p>
+                            <p className="pt-2 font-medium">Copyright ⓒ {(settings.siteName || '').replace('(주)', '')}. ALL RIGHTS RESERVED.</p>
                             <p className="text-muted-foreground/50 mt-4 text-xs font-light">
                                 본 사이트의 콘텐츠는 저작권법의 보호를 받는바, 무단 전재, 복사, 배포 등을 금합니다.
                             </p>
@@ -44,7 +58,7 @@ export default function Footer() {
                                 </svg>
                                 <span>영업문의</span>
                             </div>
-                            <span className="text-xl font-bold text-primary tracking-tighter">070-4007-1619</span>
+                            <span className="text-xl font-bold text-primary tracking-tighter">{settings.phone}</span>
                         </div>
                         <div className="flex items-center justify-between border-b border-border pb-3">
                             <div className="flex items-center gap-2.5 text-sm font-semibold text-foreground/70">
@@ -53,7 +67,7 @@ export default function Footer() {
                                 </svg>
                                 <span>기술문의</span>
                             </div>
-                            <span className="text-xl font-bold tracking-tighter">02-6267-1622</span>
+                            <span className="text-xl font-bold tracking-tighter">{settings.techPhone}</span>
                         </div>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2.5 text-sm font-semibold text-foreground/70">
@@ -62,7 +76,7 @@ export default function Footer() {
                                 </svg>
                                 <span>팩스</span>
                             </div>
-                            <span className="text-xl font-bold text-muted-foreground/70 tracking-tighter">02-6267-1625</span>
+                            <span className="text-xl font-bold text-muted-foreground/70 tracking-tighter">{settings.fax}</span>
                         </div>
                     </div>
                 </div>
